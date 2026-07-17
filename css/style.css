@@ -878,49 +878,6 @@ color:#555;
     color:#fff;
     cursor:pointer;
 }
-/* ==========================
-   PRELOADER
-========================== */
-
-#preloader{
-    position:fixed;
-    inset:0;
-    background:#ffffff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:999999;
-    transition:opacity .6s ease;
-}
-
-#preloader img{
-    width:120px;
-    animation:pulse 1.2s infinite;
-}
-@keyframes pulse{
-    0%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.1);
-    }
-
-    100%{
-        transform:scale(1);
-    }
-
-}
-.fade-up{
-    opacity:0;
-    transform:translateY(50px);
-    transition:all .8s ease;
-}
-
-.fade-up.show{
-    opacity:1;
-    transform:translateY(0);
-}
 
 /* ==========================
    OUR EXPERTISE
