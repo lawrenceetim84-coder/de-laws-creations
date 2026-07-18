@@ -1,3 +1,17 @@
+/* ==========================
+   GLOBAL FIX
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html, body{
+    width:100%;
+    overflow-x:hidden;
+}
 /* ===============================
    DE LAWS CREATIONS ENTERPRISE
    STYLE.CSS
@@ -75,6 +89,12 @@ body{
 .quote-btn:hover{
     background:#0F4C81;
     color:#fff;
+}
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+    color:#0F4C81;
 }
 
 /* ==========================
@@ -729,127 +749,42 @@ color:#555;
     color:#ddd;
 }
 /* ==========================
-   WHATSAPP BUTTON
+   FLOATING WHATSAPP
 ========================== */
 
 .whatsapp-float{
     position:fixed;
     bottom:25px;
     right:25px;
-    width:65px;
-    height:65px;
-    background:#25D366;
-    color:#fff;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:34px;
-    text-decoration:none;
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
-    z-index:9999;
-    transition:.3s;
+    z-index:999;
 }
-
-/* ==========================
-   FLOATING WHATSAPP
-========================== */
-
-.whatsapp-float{
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 9999;
-    transition: transform .3s ease;
-}
-
 .whatsapp-float img{
-    width: 65px;
-    height: 65px;
-    display: block;
+    width:60px;
+    height:60px;
+    display:block;
 }
-
-.whatsapp-float:hover{
-    transform: scale(1.12);
-}
-
 /* ==========================
    BACK TO TOP BUTTON
 ========================== */
 
 #backToTop{
     position:fixed;
-    bottom:105px;
+    bottom:100px;
     right:25px;
-    width:50px;
-    height:50px;
+    width:60px;
+    height:60px;
     border:none;
     border-radius:50%;
     background:#0F4C81;
     color:#fff;
-    font-size:22px;
+    font-size:26px;
     cursor:pointer;
-    display: block;
-    transition:.3s;
-    z-index:999;
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
-}
-
-#backToTop:hover{
-    background:#D4AF37;
-    transform:translateY(-5px);
-}
-<!-- NAVBAR -->
-<nav class="navbar">
-
-    <div class="logo">
-        <img src="../images/logo.png" alt="Logo">
-    </div>
-
-    <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#why-choose-us">Why Choose Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <a href="#" class="quote-btn">Get Quote</a>
-
-    <div class="menu-toggle">
-        ☰
-    </div>
-
-</nav>
-
-/* ==========================
-   LIGHTBOX
-========================== */
-
-.lightbox{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.9);
     display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:99999;
+    z-index:999;
+    transition:.3s;
 }
-
-.lightbox img{
-    max-width:90%;
-    max-height:85%;
-    border-radius:15px;
-}
-
-.close-lightbox{
-    position:absolute;
-    top:30px;
-    right:40px;
-    font-size:45px;
-    color:#fff;
-    cursor:pointer;
+#backToTop:hover{
+    background:#08345a;
 }
 
 /* ==========================
@@ -934,48 +869,46 @@ color:#555;
 ========================== */
 
 .cta{
-    background:linear-gradient(135deg,#0F4C81,#1C6CB5);
+    width:90%;
+    max-width:1200px;
+    margin:80px auto;
+    background:#0F4C81;
     color:#fff;
-    padding:100px 8%;
     text-align:center;
+    padding:70px 40px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
 }
 
 .cta h2{
-    font-size:42px;
+    font-size:48px;
     margin-bottom:20px;
-    color:#ffffff;
 }
 
 .cta p{
-    max-width:700px;
-    margin:auto;
+    max-width:800px;
+    margin:0 auto 35px;
+    font-size:20px;
     line-height:1.8;
-    font-size:18px;
 }
 
 .cta-buttons{
-    margin-top:40px;
     display:flex;
     justify-content:center;
     gap:20px;
     flex-wrap:wrap;
 }
 
-.cta-btn{
-    text-decoration:none;
-    padding:16px 35px;
+.cta-buttons a{
+    padding:15px 35px;
     border-radius:50px;
+    text-decoration:none;
     font-weight:600;
-    transition:.3s;
 }
 
 .call-btn{
     background:#D4AF37;
-    color:#fff;
-}
-
-.call-btn:hover{
-    transform:translateY(-5px);
+    color:#111;
 }
 
 .whatsapp-btn{
@@ -983,10 +916,11 @@ color:#555;
     color:#fff;
 }
 
+.call-btn:hover,
 .whatsapp-btn:hover{
-    transform:translateY(-5px);
+    transform:translateY(-3px);
+    transition:.3s;
 }
-
 /* ==========================
    LIGHTBOX
 ========================== */
@@ -1115,22 +1049,53 @@ color:#555;
    MOBILE
 ========================== */
 
-@media(max-width:992px){
+@media (max-width:600px){
 
     .portfolio-grid{
         grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:600px){
-
-    .portfolio-grid{
-        grid-template-columns:1fr;
+        gap:12px;
     }
 
     .portfolio-image{
-        height:220px;
+        height:170px;
+    }
+}
+/* ==========================
+   MOBILE NAVIGATION
+========================== */
+
+@media (max-width:768px){
+
+    .navbar{
+        padding:15px 5%;
     }
 
+    .menu-toggle{
+        display:block;
+    }
+
+    .quote-btn{
+        display:none;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:#fff;
+        display:none;
+        flex-direction:column;
+        align-items:center;
+        padding:20px 0;
+        box-shadow:0 8px 20px rgba(0,0,0,.1);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links li{
+        margin:15px 0;
+    }
 }
