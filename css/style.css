@@ -366,94 +366,51 @@ body{
     line-height:1.7;
 }
 
-/* ==========================
-   PORTFOLIO
-========================== */
-
-.portfolio{
-    padding:90px 8%;
-    background:#f8f9fb;
+/* ========================== PORTFOLIO ========================== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 20px;
+    margin-top: 40px;
+    padding: 0 10px; /* Small padding for mobile */
 }
 
-.portfolio-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
+.portfolio-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    background: transparent;
 }
 
-.portfolio-item{
-    background:#fff;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    transition:.4s ease;
+.portfolio-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18); /* Slightly stronger shadow on hover */
 }
 
-.portfolio-item:hover{
-    transform:translateY(-8px);
-    box-shadow:0 18px 40px rgba(0,0,0,.15);
+.portfolio-image {
+    overflow: hidden;
+    line-height: 0;
+    background: transparent;
 }
 
-.portfolio-image{
-    overflow:hidden;
-    background:#f5f5f5;
+.portfolio-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+    object-fit: cover; /* Ensures images fill their container nicely */
 }
 
-.portfolio-image img{
-    width:100%;
-    display:block;
-    transition:.5s ease;
+.portfolio-item:hover img {
+    transform: scale(1.05);
 }
 
-.portfolio-item:hover img{
-    transform:scale(1.05);
+/* Optional: Add focus styles for accessibility */
+.portfolio-item:focus-within {
+    outline: 2px solid #007BFF;
+    outline-offset: 4px;
 }
-
-.portfolio-content{
-    padding:18px;
-    text-align:center;
-}
-
-.portfolio-content h3{
-    font-size:20px;
-    color:#0f172a;
-    margin-bottom:6px;
-}
-
-.portfolio-content p{
-    font-size:14px;
-    color:#64748b;
-}
-
-/* Tablet */
-@media (max-width:992px){
-
-    .portfolio-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-/* Phone */
-@media (max-width:768px){
-
-    .portfolio{
-        padding:70px 5%;
-    }
-
-    .portfolio-grid{
-        grid-template-columns:1fr;
-        gap:22px;
-    }
-
-    .portfolio-item{
-        border-radius:15px;
-    }
-
-    .portfolio-content{
-        padding:15px;
-    }
-
 }
 .why-us{
 
